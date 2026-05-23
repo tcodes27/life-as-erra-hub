@@ -6,6 +6,7 @@ import hero from "@/assets/hero.jpg";
 import about from "@/assets/about.jpg";
 import pilates from "@/assets/pilates.jpg";
 import shop from "@/assets/shop.jpg";
+import { CurrentlyLoving } from "@/components/site/CurrentlyLoving";
 
 export const Route = createFileRoute("/")({
   head: () => ({
