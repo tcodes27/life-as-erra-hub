@@ -77,6 +77,10 @@ function Index() {
         </div>
       </section>
 
+      <CurrentlyLoving />
+
+
+
       <section className="container-editorial my-24">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-soft order-2 md:order-1">
