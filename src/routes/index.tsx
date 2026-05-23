@@ -6,6 +6,7 @@ import hero from "@/assets/hero.jpg";
 import about from "@/assets/about.jpg";
 import pilates from "@/assets/pilates.jpg";
 import shop from "@/assets/shop.jpg";
+import { CurrentlyLoving } from "@/components/site/CurrentlyLoving";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -75,6 +76,10 @@ function Index() {
           <FeatureCard to="/pilates" eyebrow="Wellness" title="B.MARC Pilates" copy="A wellness community — online today, hybrid tomorrow." image={pilates} />
         </div>
       </section>
+
+      <CurrentlyLoving />
+
+
 
       <section className="container-editorial my-24">
         <div className="grid md:grid-cols-2 gap-12 items-center">
