@@ -7,9 +7,9 @@ export const Route = createFileRoute("/links")({
   head: () => ({
     meta: [
       { title: "Link Hub — LifeAsErra" },
-      { name: "description", content: "Shop my looks, beauty, home, fitness, business tools, and favorites — all in one place." },
+      { name: "description", content: "Shop my looks, beauty, home, wellness, business tools, Amazon favorites, daily essentials and digital products — all in one place." },
       { property: "og:title", content: "Link Hub — LifeAsErra" },
-      { property: "og:description", content: "Shop my looks, beauty, home, fitness, business tools, and favorites." },
+      { property: "og:description", content: "Categorized links to everything I'm using and loving right now." },
     ],
     links: [{ rel: "canonical", href: "/links" }],
   }),
@@ -20,20 +20,20 @@ type LinkItem = { title: string; desc?: string; href: string; emoji?: string };
 type Section = { title: string; items: LinkItem[] };
 
 const topPicks: LinkItem[] = [
-  { title: "My Everyday Cream Sweater", desc: "Cashmere, on repeat", href: "#", emoji: "🤍" },
-  { title: "The Pilates Reformer I Use", desc: "At-home favorite", href: "#", emoji: "🧘🏽‍♀️" },
-  { title: "Relocation E-Book", desc: "My step-by-step guide", href: "/shop", emoji: "📘" },
+  { title: "My Everyday Cream Sweater", desc: "Quiet luxury, on repeat", href: "/go/favorites", emoji: "🤍" },
+  { title: "B.MARC Pilates Community", desc: "Join us online", href: "/pilates", emoji: "🧘🏽‍♀️" },
+  { title: "The Relocation Guide", desc: "My step-by-step e-book", href: "/shop", emoji: "📘" },
 ];
 
 const sections: Section[] = [
   { title: "Shop My Looks", items: [
-    { title: "Linen Blazer — Aritzia", href: "#" },
+    { title: "Linen Blazer", href: "#" },
     { title: "Quiet-Luxury Loafers", href: "#" },
     { title: "Gold Layering Necklace", href: "#" },
     { title: "The Perfect White Tee", href: "#" },
   ]},
   { title: "Beauty + Hair", items: [
-    { title: "Glow Skin Routine", desc: "Cleanser + serum + SPF", href: "#" },
+    { title: "My Glow Skin Routine", desc: "Cleanser + serum + SPF", href: "/go/makeup" },
     { title: "Silk Press Essentials", href: "#" },
     { title: "My Everyday Lip", href: "#" },
   ]},
@@ -42,20 +42,30 @@ const sections: Section[] = [
     { title: "Ceramic Vases I Love", href: "#" },
     { title: "Warm-Tone Lamp", href: "#" },
   ]},
-  { title: "Fitness + Pilates", items: [
-    { title: "Join bmarc Pilates", desc: "Free access right now", href: "/pilates" },
-    { title: "Reformer for Home", href: "#" },
+  { title: "Wellness + Pilates", items: [
+    { title: "Join B.MARC Pilates", desc: "Online wellness community", href: "/go/pilates" },
+    { title: "Mobility & Mat Essentials", href: "#" },
     { title: "Workout Set I Wear", href: "#" },
   ]},
   { title: "Business Tools", items: [
-    { title: "Her Digital Media — Services", href: "/services" },
+    { title: "Her Digital Media — Services", href: "/go/business" },
     { title: "Booking + Payments Stack", href: "#" },
     { title: "Email Marketing Tool", href: "#" },
   ]},
-  { title: "My Favorites", items: [
+  { title: "Amazon Favorites", items: [
+    { title: "Amazon Storefront", href: "#" },
+    { title: "Kitchen + Home Picks", href: "#" },
+    { title: "Travel & Carry-On", href: "#" },
+  ]},
+  { title: "Daily Essentials", items: [
     { title: "Coffee I Drink Daily", href: "#" },
     { title: "Candles That Smell Like a Hotel", href: "#" },
-    { title: "Travel Carry-On", href: "#" },
+    { title: "The Water Bottle", href: "#" },
+  ]},
+  { title: "Digital Products", items: [
+    { title: "The Relocation Guide", href: "/shop" },
+    { title: "Business Funding 101", href: "/shop" },
+    { title: "The Yearly Planner", href: "/shop" },
   ]},
 ];
 
@@ -81,7 +91,7 @@ function LinksPage() {
       <section className="container-editorial">
         <div className="rounded-3xl bg-accent/50 p-6 md:p-8 mb-12 border border-border/40">
           <div className="flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-muted-foreground mb-5">
-            <Sparkles size={14} /> Top picks this week
+            <Sparkles size={14} /> Featured favorites
           </div>
           <div className="grid gap-3 md:grid-cols-3">
             {topPicks.map((p) => <LinkCard key={p.title} item={p} />)}
