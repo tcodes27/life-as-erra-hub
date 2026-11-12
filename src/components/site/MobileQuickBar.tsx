@@ -36,7 +36,7 @@ export function MobileQuickBar() {
             ) : (
               <Link
                 key={to}
-                to={to}
+                to={to as Exclude<typeof to, "/#join">}
                 className={className}
                 activeProps={{ className: `${className} text-foreground` }}
               >
